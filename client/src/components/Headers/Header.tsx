@@ -7,9 +7,10 @@ import Button from '@mui/material/Button';
 import Hidden from '@mui/material/Hidden';
 import Logo from '../../assests/logo.png'
 
+
 const Header: React.FC = () => {
   const headerStyle: React.CSSProperties = {
-    backgroundColor: '#0d47a1', // Dark blue background color
+    backgroundColor: '#1a1a1a', // Dark background color
     boxShadow: '0px 2px 4px -1px rgba(0,0,0,0.1)',
   };
 
@@ -38,15 +39,34 @@ const Header: React.FC = () => {
   };
 
   const logoStyle: React.CSSProperties = {
-    maxWidth: '100px', // Adjust the size as needed
+    maxWidth: '150px', // Adjust the size as needed
+    marginRight: '16px', // Add margin for separation from text
+  };
+
+  const titleStyle: React.CSSProperties = {
+    color: '#fff', // White text color
+    fontWeight: 'bold', // Bold font weight
+    flexGrow: 1, // Allow title to take available space
+  };
+
+  const buttonStyle: React.CSSProperties = {
+    marginLeft: '16px', // Add margin between buttons
   };
 
   return (
     <AppBar position="static" style={headerStyle}>
       <Toolbar>
         <div style={leftContentStyle}>
-        <img src={Logo} alt="Logo" style={logoStyle} />
-            
+          <img src={Logo} alt="Logo" style={logoStyle} />
+          <Typography variant="h6" noWrap style={titleStyle}>
+            Reactive Forge
+          </Typography>
+          <Typography variant="h6" noWrap style={titleStyle}>
+            Product
+          </Typography>
+          <Typography variant="h6" noWrap style={titleStyle}>
+            Resources
+          </Typography>
         </div>
         <Hidden smDown>
           {/* Hide on small screens (mobile) and below */}
@@ -58,8 +78,12 @@ const Header: React.FC = () => {
                 style={inputStyle}
               />
             </div>
-            <Button color="inherit">Login</Button>
-            <Button color="inherit">Get Started</Button>
+            <Button color="inherit" style={buttonStyle}>
+              Login
+            </Button>
+            <Button color="inherit" style={buttonStyle}>
+              Get Started
+            </Button>
           </div>
         </Hidden>
       </Toolbar>
